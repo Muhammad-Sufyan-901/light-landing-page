@@ -1,7 +1,17 @@
-import React from 'react';
+import React from "react";
 
-const Nav = () => {
-  return <div>Nav</div>;
-};
+function Nav({ content }) {
+  return (
+    <nav className="hidden lg:flex">
+      <ul className="flex items-center space-x-12 font-secondary">
+        {content.map((title, index) => (
+          <li key={index} className={title === "Sign Up" ? "btn" : "nav-link"}>
+            <a href="/#">{title}</a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
+}
 
 export default Nav;
